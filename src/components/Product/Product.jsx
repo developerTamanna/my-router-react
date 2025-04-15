@@ -1,7 +1,7 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Product = ({ product }) => {
-    const { category, price, description, image } = product;
+    const { title, price, description, image } = product;
 
     return (
         <div className="h-full">
@@ -17,7 +17,7 @@ const Product = ({ product }) => {
 <div className="card-body flex flex-col justify-between">
     <div>
         <h2 className="card-title justify-center">
-            {category}
+            {title}
             <div className="badge badge-secondary">NEW</div>
         </h2>
         <p className="text-justify">{description}</p>
@@ -27,6 +27,9 @@ const Product = ({ product }) => {
     <div className="card-actions justify-center mt-4">
         <div className="badge badge-outline">Fashion</div>
         <div className="badge badge-outline">Products</div>
+        <Link to={`/product/ ${product.id}`}>
+        <button  className='border-1 px-1 border-gray-100 rounded lg'>mor info</button>
+        </Link>
     </div>
 </div>
 </div>
